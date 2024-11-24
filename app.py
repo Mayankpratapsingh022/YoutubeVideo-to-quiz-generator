@@ -10,6 +10,15 @@ load_dotenv()
 OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI()
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 @st.cache_data
 def fetch_questions(text_content, quiz_level, num_questions):
     """
