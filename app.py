@@ -7,7 +7,7 @@ from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
-OpenAI.api_key = st.secrets["api_key"]
+OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI()
 
 @st.cache_data
